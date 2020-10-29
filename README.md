@@ -7,7 +7,7 @@ Please note that Ballchasing.Net is still VERY alpha. Bugs are everywhere. Some 
 I support getting started on open-source code early in your software career, therefore I welcome new programmers looking for a place to start. 
 If you dont have the technical ability to help just yet but want to help and learn you can either: 
 - Send me an email at `tristanpearce24@gmail.com`.
-- Create a new issue stating what you would like help with.
+- Create a new issue.
 
 And I will see what I can do to help!
 
