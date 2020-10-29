@@ -71,7 +71,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, requestUri);
 
             // Send HTTP Request and get contents.
-            var response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
             string json = await response.Content.ReadAsStringAsync();
 
             // Parse Contents.
@@ -98,7 +98,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, requestUri);
 
             // Make HTTP Request and get content.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
             string json = await response.Content.ReadAsStringAsync();
 
             // Create result.
@@ -136,7 +136,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, $"{BaseAddress}replays?{info.ToUrlParameters()}");
 
             // Send HTTP Request and get response content.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
             string resultJson = await response.Content.ReadAsStringAsync();
 
             // Create result.
@@ -174,7 +174,7 @@ namespace Ballchasing.Net
             //===================//
             // Make HTTP Request //
             //===================//
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
 
             //======================//
             // Get Response Content //
@@ -213,7 +213,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, $"{BaseAddress}replays/{replayId}/file");
 
             // Send HTTP Request.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
 
             // Create result.
             DownloadReplayResult result = new DownloadReplayResult()
@@ -246,7 +246,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, $"{BaseAddress}replays/{replayId}");
 
             // Make HTTP Request.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
 
             // Create result.
             DeleteReplayResult result = new DeleteReplayResult()
@@ -285,7 +285,7 @@ namespace Ballchasing.Net
             };
 
             // Send HTTP Request and get content.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
             string responseJson = await response.Content.ReadAsStringAsync();
 
             PatchReplayResult result = new PatchReplayResult()
@@ -322,7 +322,7 @@ namespace Ballchasing.Net
             };
 
             // Send HTTP Request and get content.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
             string json = await response.Content.ReadAsStringAsync();
 
             // Create result.
@@ -361,7 +361,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, $"{BaseAddress}replays?{info.ToUrlParameters()}");
 
             // Send HTTP Request and get content.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
             string resultJson = await response.Content.ReadAsStringAsync();
 
             // Create result.
@@ -407,7 +407,7 @@ namespace Ballchasing.Net
             };
 
             // Make HTTP Request.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
 
             // Get response json.
             string responseJson = await response.Content.ReadAsStringAsync();
@@ -441,7 +441,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, requestUri);
 
             // Send HTTP Request and read Response.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
             string json = await response.Content.ReadAsStringAsync();
 
             // Create result.
@@ -472,7 +472,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, $"{BaseAddress}groups/{replayGroupId}");
 
             // Make HTTP Request.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
 
             // Parse Response.
             DeleteReplayGroupResult result = new DeleteReplayGroupResult();
@@ -508,7 +508,7 @@ namespace Ballchasing.Net
             };
 
             // Send HTTP Request.
-            HttpResponseMessage response = await Http.SendAsync(request);
+            using HttpResponseMessage response = await Http.SendAsync(request);
 
             // Create result.
             PatchReplayGroupResult result = new PatchReplayGroupResult();
