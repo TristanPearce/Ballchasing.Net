@@ -9,4 +9,12 @@
     <ProjectReference Include="..\BallChasing.Net\Ballchasing.Net.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Samples\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Samples.Net" Version="0.2.0" />
+  </ItemGroup>
+
 </Project>
