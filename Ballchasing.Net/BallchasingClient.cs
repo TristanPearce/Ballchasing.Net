@@ -213,7 +213,7 @@ namespace Ballchasing.Net
             var request = new HttpRequestMessage(method, $"{BaseAddress}replays/{replayId}/file");
 
             // Send HTTP Request.
-            using HttpResponseMessage response = await Http.SendAsync(request);
+            HttpResponseMessage response = await Http.SendAsync(request);
 
             // Create result.
             DownloadReplayResult result = new DownloadReplayResult()
